@@ -1,0 +1,15 @@
+[1mdiff --git a/Gokul/Gokul's Program.py b/Gokul/Gokul's Program.py[m
+[1mindex fc1716c..5bb6ac0 100644[m
+[1m--- a/Gokul/Gokul's Program.py[m	
+[1m+++ b/Gokul/Gokul's Program.py[m	
+[36m@@ -1,6 +1,6 @@[m
+ age = int(input())[m
+ [m
+ if age >= 18:[m
+[31m-    print("Eligible to vote")[m
+[32m+[m[32m    print(" You are eligible to vote")[m
+ else:[m
+[31m-    print("Not eligible")[m
+\ No newline at end of file[m
+[32m+[m[32m    print(" You are Not eligible to vote")[m
+\ No newline at end of file[m
