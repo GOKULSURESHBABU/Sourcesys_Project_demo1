@@ -1,11 +1,11 @@
-# Mini Data Analyzer
+# Traffic Comparison Analyzer
 
-A mini web-based data analyzer that uses Python libraries (numpy, pandas, matplotlib) running in the browser via Pyodide to analyze datasets and display results.
+A web-based tool to compare traffic data across countries using Python libraries (numpy, pandas, matplotlib) running in the browser via Pyodide.
 
 ## Features
-- Upload CSV datasets
-- Compute average statistics using pandas/numpy
-- Visualize data with matplotlib bar charts
+- Upload CSV datasets with traffic metrics
+- Compute average statistics for traffic indicators
+- Visualize comparisons with bar charts (e.g., vehicles vs. accidents by country)
 - All processing done client-side with no backend
 
 ## Technologies Used
@@ -17,8 +17,8 @@ A mini web-based data analyzer that uses Python libraries (numpy, pandas, matplo
 
 ## How to Use
 1. Open `index.html` in a modern web browser (Chrome recommended for Pyodide).
-2. Upload a CSV file.
-3. Click "Analyze Data" to see statistics and chart.
+2. Upload a CSV file with columns like Country, Vehicles, Accidents, etc.
+3. Click "Analyze Data" to see averages and comparison chart.
 
 ## Live URL
 To host on GitHub Pages:
@@ -27,8 +27,8 @@ To host on GitHub Pages:
 3. Live URL: `https://<username>.github.io/<repo-name>/mini/`
 
 ## Example Dataset
-Sample CSV provided in `data/sample.csv`.
+Sample CSV provided in `data/sample.csv` with traffic data for 5 countries.
 
 ## Reusability
 - Modular: Separate HTML, CSS, JS files.
-- Extendable: Modify the Python code in `script.js` for different analyses.
+- Extendable: Modify the Python code in `script.js` for different analyses or plots.

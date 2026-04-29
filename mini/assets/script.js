@@ -40,14 +40,22 @@ import base64
 from io import StringIO
 df = pd.read_csv(StringIO("""${csvText.replace(/"/g, '\\"')}"""))
 
-# Compute stats
+# Compute stats (averages)
 stats = df.select_dtypes(include=[np.number]).mean()
 
-# Plot
-fig, ax = plt.subplots()
-stats.plot(kind='bar', ax=ax)
-ax.set_title('Average Scores')
-ax.set_ylabel('Score')
+# Plot bar chart for Vehicles and Accidents
+fig, ax = plt.subplots(figsize=(10, 6))
+x = np.arange(len(df['Country']))
+width = 0.35
+
+ax.bar(x - width/2, df['Vehicles (millions)'], width, label='Vehicles (millions)', color='blue')
+ax.bar(x + width/2, df['Accidents (thousands)'], width, label='Accidents (thousands)', color='red')
+
+ax.set_xlabel('Country')
+ax.set_title('Traffic Comparison: Vehicles and Accidents by Country')
+ax.set_xticks(x)
+ax.set_xticklabels(df['Country'])
+ax.legend()
 
 # Save to base64
 buf = io.BytesIO()
@@ -69,7 +77,7 @@ result
 
     // Display stats
     const outputDiv = document.getElementById('output');
-    outputDiv.innerHTML = '<h3>Statistics:</h3>' + Object.entries(result.stats).map(([k, v]) => `${k}: ${v.toFixed(2)}`).join('<br>');
+    outputDiv.innerHTML = '<h3>Average Traffic Metrics:</h3>' + Object.entries(result.stats).map(([k, v]) => `${k}: ${v.toFixed(2)}`).join('<br>');
 
     // Display plot
     const plotDiv = document.getElementById('plot');
